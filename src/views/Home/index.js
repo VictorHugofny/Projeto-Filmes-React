@@ -6,6 +6,7 @@ import api from '../../services/api'
 function Home(){
     const [filmes, setFilmes] = useState([]);
 
+    //Toda vez que roda a aplica
     //consumindo API com axios
     useEffect(()=>{
         //rodar função de forma asincrona
@@ -19,14 +20,27 @@ function Home(){
                 }
             })
 
-            console.log(response.data.results);
+            //console.log(response.data.results.slice(0,10));
+            setFilmes(response.data.results.slice(0,10))
         }
 
         loadFilmes();
     },[])
     return(
-        <div>
-            <h1>home</h1>
+        <div className='container'>
+            <div className='lista-filmes'>
+                {filmes.map((filme)=>{
+                    return(
+                        <article>
+                            <strong>{filme.title}</strong>
+                            <img src={filme.poster_path}></img>
+                        </article>
+                    )
+                })
+            }
+                    
+            </div>
+            
         </div>
     )
 }
