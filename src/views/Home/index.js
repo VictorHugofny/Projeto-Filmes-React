@@ -33,7 +33,7 @@ function Home(){
                     return(
                         <article key ={filme.id}>
                             <strong>{filme.title}</strong>
-                            <img src={filme.poster_path}></img>
+                            <img src= {`https://image.tmdb.org/t/p/original${filme.poster_path} `}></img>
                         </article>
                     )
                 })
