@@ -1,6 +1,7 @@
 import { useEffect, useState} from 'react';
-import api from '../../services/api'
-
+import api from '../../services/api';
+import {Link} from 'react-router-dom';
+import './style.css'
 //movie/now_playing?api_key=afd04b3461ee0639ed947de89b70e915&language=pt-BR
 
 function Home(){
@@ -33,7 +34,8 @@ function Home(){
                     return(
                         <article key ={filme.id}>
                             <strong>{filme.title}</strong>
-                            <img src= {`https://image.tmdb.org/t/p/original${filme.poster_path} `}></img>
+                            <img src= {`https://image.tmdb.org/t/p/original${filme.poster_path}`} alt={filme.title}></img>
+                            <Link to ={`/filme/${filme.id}`}> Acessar</Link>
                         </article>
                     )
                 })
