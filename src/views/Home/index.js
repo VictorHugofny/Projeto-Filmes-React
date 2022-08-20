@@ -31,7 +31,7 @@ function Home(){
             <div className='lista-filmes'>
                 {filmes.map((filme)=>{
                     return(
-                        <article>
+                        <article key ={filme.id}>
                             <strong>{filme.title}</strong>
                             <img src={filme.poster_path}></img>
                         </article>
