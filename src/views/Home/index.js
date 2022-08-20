@@ -5,7 +5,7 @@ import api from '../../services/api'
 
 function Home(){
     const [filmes, setFilmes] = useState([]);
-
+    //hoje foi so tristeza
     //Toda vez que roda a aplica
     //consumindo API com axios
     useEffect(()=>{
