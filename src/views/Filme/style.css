@@ -9,6 +9,7 @@
 
 .filme-info h1{
     margin: 14px 0;
+    color:white;
 }
 
 .filme-info img{
@@ -20,10 +21,16 @@
 }
 
 .filme-info h3{
+    color:white;
     margin-top: 14px;
 }
 
+.filme-info strong{
+    color:white;
+}
+
 .filme-info span{
+    color:white;
     margin: 8px 0;
 }
 
@@ -41,6 +48,7 @@
 }
 
 .buttons a{
+    color:white;
     text-decoration: none;
     color: black;
     transition: all 0.5s;

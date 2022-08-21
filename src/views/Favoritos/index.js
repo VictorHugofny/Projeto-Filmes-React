@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 import {Link} from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 function Favoritos(){
 
@@ -20,10 +22,13 @@ function Favoritos(){
         })
         setFilmes(filtroFilmes)
         localStorage.setItem("@primeflix",JSON.stringify(filtroFilmes));
+        toast.success("Filme excluido com sucesso");
     }
     return(
         <div className='meus-filmes'>
-            <h1>Meus filmes favoritos</h1>
+            <h1>Meus filmes favoritos</h1>  
+
+            {filmes.length === 0 && <span>Voce não possui filmes salvos :(</span>}
 
             <ul>
                 {filmes.map((filme)=>{
