@@ -42,7 +42,6 @@ function Filme(){
             <img src= {`https://image.tmdb.org/t/p/original${filme.backdrop_path}`} alt={filme.title}></img>
             <h3>Sinopse</h3>
             <span>{filme.overview}</span>
-
             <strong>Avaliação: {filme.vote_average} /10</strong>
         </div>
     )
