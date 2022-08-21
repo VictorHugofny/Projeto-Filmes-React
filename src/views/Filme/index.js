@@ -1,11 +1,13 @@
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import './style.css';
 
 import api from '../../services/api';
 
 function Filme(){
     const {id} = useParams();
+    const navigation = useNavigate();
+
     const [filme, setFilme] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -23,12 +25,13 @@ function Filme(){
                 setLoading(false);
             })
             .catch((erro)=>{
-                console.log('erro')
+                navigation("/",{ replace:true})
+                return;
             });
         }
 
         loadFilme();
-    },[])
+    },[navigation, id])
 
     if(loading){
         return(
@@ -47,7 +50,7 @@ function Filme(){
             <div className='buttons'>
                 <button>Salvar</button>
                 <button>
-                    <a href="#">
+                    <a target='_blank' href={`https://www.youtube.com/results?search_query=${filme.title} trailer`}>
                         Trailer
                     </a>
                 </button>
