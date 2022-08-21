@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import './style.css';
 
 import api from '../../services/api';
 
@@ -43,6 +44,14 @@ function Filme(){
             <h3>Sinopse</h3>
             <span>{filme.overview}</span>
             <strong>Avaliação: {filme.vote_average} /10</strong>
+            <div className='buttons'>
+                <button>Salar</button>
+                <button>
+                    <a href="#">
+                        Trailer
+                    </a>
+                </button>
+            </div>
         </div>
     )
 }
