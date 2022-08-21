@@ -1,6 +1,4 @@
-body{
-    background-color: rgb(38, 38, 38);
-}
+
 
 .lista-filmes{
     max-width: 800px;
@@ -30,7 +28,7 @@ body{
     text-align: center;
     font-size: 22px;
     display: block;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .lista-filmes a{
@@ -45,4 +43,13 @@ body{
     margin-bottom: 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    font-size: 140%;
+    color: white;
 }
