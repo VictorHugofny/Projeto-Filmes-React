@@ -33,6 +33,27 @@ function Filme(){
         loadFilme();
     },[navigation, id])
 
+    function salvarFilme(){
+        //pega lista de filmes
+        const minhaLista = localStorage.getItem("@primeflix");
+
+        //tentar buscar e se não existir iniciar vazio
+        let filmesSalvos = JSON.parse(minhaLista) || [];
+        
+        //verifica se ja existe esse filme na lista
+        const hasFilme = filmesSalvos.some((filmesSalvos)=> filmesSalvos.id === filme.id)
+        
+        if(hasFilme){
+            alert("filme ja existe");
+            return;
+        }
+
+        filmesSalvos.push(filme);
+        //cria lista de filmes
+        localStorage.setItem("@primeflix",JSON.stringify(filmesSalvos));
+        alert("filme salvo com sucesso")
+    }
+
     if(loading){
         return(
             <div>
@@ -48,12 +69,10 @@ function Filme(){
             <span>{filme.overview}</span>
             <strong>Avaliação: {filme.vote_average} /10</strong>
             <div className='buttons'>
-                <button>Salvar</button>
-                <button>
-                    <a target='_blank' href={`https://www.youtube.com/results?search_query=${filme.title} trailer`}>
-                        Trailer
-                    </a>
-                </button>
+                <button onClick={salvarFilme}>Salvar</button>
+                <a target='blank' href={`https://www.youtube.com/results?search_query=${filme.title} trailer`}>
+                    <button>Trailer</button>
+                </a>
             </div>
         </div>
     )
