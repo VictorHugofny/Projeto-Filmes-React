@@ -33,7 +33,7 @@ function Favoritos(){
             <ul>
                 {filmes.map((filme)=>{
                     return(
-                        <li ket = {filme.id}>
+                        <li key = {filme.id}>
                             <span>{filme.title}</span>
                             <div>
                                 <Link to= {`/filme/${filme.id}`}>
